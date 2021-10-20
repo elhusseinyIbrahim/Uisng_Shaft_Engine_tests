@@ -4,6 +4,7 @@ import com.shaft.driver.DriverFactory;
 import com.shaft.gui.browser.BrowserActions;
 import com.shaft.gui.element.ElementActions;
 import com.shaft.validation.Validations;
+import gui.pages.GoogleHome;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -16,6 +17,7 @@ import org.testng.annotations.Test;
 
 public class Test1 {
     private WebDriver driver;
+    private GoogleHome homePage;
 
     @Test
     public void Test11() {
@@ -46,7 +48,7 @@ public class Test1 {
     @BeforeMethod
     public void beforeMethod() {
         driver = DriverFactory.getDriver();
-        BrowserActions.navigateToURL(driver, "https://www.google.com/");
+        new GoogleHome(driver).navgatieToGoogle();
     }
 
     @AfterMethod
